@@ -25,24 +25,37 @@ namespace Domain_Availability_Checker
 
         public void Check()
         {
-            HttpWebRequest request = WebRequest.CreateHttp($"https://nl.godaddy.com/domainsapi/v1/search/exact?q={Url}&key=dpp_search&pc=&ptl=");
-            request.Accept = "application/json, text/plain, */*";
-            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
-            request.Referer = $"https://nl.godaddy.com/domains/searchresults.aspx?checkAvail=1&domainToCheck={Url}";
-
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            try
             {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                HttpWebRequest request = WebRequest.CreateHttp($"https://nl.godaddy.com/domainsapi/v1/search/exact?q={Url}&key=dpp_search&pc=&ptl=");
+                request.Accept = "application/json, text/plain, */*";
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
+                request.Referer = $"https://nl.godaddy.com/domains/searchresults.aspx?checkAvail=1&domainToCheck={Url}";
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    string source = reader.ReadToEnd();
-                    JavaScriptSerializer deserializer = new JavaScriptSerializer();
-                    dynamic json = deserializer.Deserialize<dynamic>(source);
-                    bool available = json["ExactMatchDomain"]["IsAvailable"];
-                    Available = available.ToString();
-                    
-                    if(available)
-                        Price = json["Products"][0]["PriceInfo"]["ListPriceDisplay"];
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        string source = reader.ReadToEnd();
+                        JavaScriptSerializer deserializer = new JavaScriptSerializer();
+                        dynamic json = deserializer.Deserialize<dynamic>(source);
+
+                        bool available = json["ExactMatchDomain"]["IsAvailable"];
+                        bool valid = json["ExactMatchDomain"]["IsValid"];
+
+                        if (valid == false)
+                            available = false;
+
+                        Available = available.ToString();
+
+                        if (available && valid)
+                            Price = json["Products"][0]["PriceInfo"]["ListPriceDisplay"];
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                Check();
             }
         }
     }
