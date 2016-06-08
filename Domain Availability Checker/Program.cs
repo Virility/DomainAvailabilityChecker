@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DomainAvailabilityChecker.UI.Forms;
 
-namespace Domain_Availability_Checker
+namespace DomainAvailabilityChecker
 {
     static class Program
     {
@@ -16,7 +14,7 @@ namespace Domain_Availability_Checker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new MainForm());
         }
     }
-}
+}         

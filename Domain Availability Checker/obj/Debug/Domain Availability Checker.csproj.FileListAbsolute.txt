@@ -6,3 +6,13 @@ C:\Users\Kennard\documents\visual studio 2015\Projects\Domain Availability Check
 C:\Users\Kennard\documents\visual studio 2015\Projects\Domain Availability Checker\Domain Availability Checker\obj\Debug\Domain Availability Checker.csproj.GenerateResource.Cache
 C:\Users\Kennard\documents\visual studio 2015\Projects\Domain Availability Checker\Domain Availability Checker\obj\Debug\Domain Availability Checker.exe
 C:\Users\Kennard\documents\visual studio 2015\Projects\Domain Availability Checker\Domain Availability Checker\obj\Debug\Domain Availability Checker.pdb
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\bin\Debug\Domain Availability Checker.exe.config
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\Domain Availability Checker.exe
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\Domain Availability Checker.pdb
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\bin\Debug\Domain Availability Checker.exe
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\bin\Debug\Domain Availability Checker.pdb
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\Domain Availability Checker.csprojResolveAssemblyReference.cache
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\DomainAvailabilityChecker.Properties.Resources.resources
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\DomainAvailabilityChecker.UI.Forms.DomainInputDialog.resources
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\DomainAvailabilityChecker.UI.Forms.MainForm.resources
+C:\Users\Trvp\Source\Repos\DomainAvailabilityChecker\Domain Availability Checker\obj\Debug\Domain Availability Checker.csproj.GenerateResource.Cache
